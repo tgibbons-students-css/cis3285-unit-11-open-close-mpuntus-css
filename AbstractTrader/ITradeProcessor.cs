@@ -10,16 +10,9 @@ namespace AbstractTrader
 {
     public interface ITradeProcessor
     {
-        protected abstract IEnumerable<string> ReadTradeData(Stream stream);
-
-        protected abstract IEnumerable<TradeRecord> ParseTrades(IEnumerable<string> tradeData);
+        void ProcessTrades(Stream stream);
 
 
-        
-
-        protected abstract void StoreTrades(IEnumerable<TradeRecord> trades);
-
-        
 
 
     }
