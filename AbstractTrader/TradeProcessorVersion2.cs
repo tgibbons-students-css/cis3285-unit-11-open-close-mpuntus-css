@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AbstractTrader
 {
-    class TradeProcessorVersion2 : TradeProcessor
+    class TradeProcessorVersion2 : ITradeProcessor
     {
 
         protected void LogMessage(string message, params object[] args)

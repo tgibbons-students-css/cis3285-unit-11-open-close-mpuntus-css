@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AbstractTrader
 {
-    public abstract class TradeProcessor
+    public interface ITradeProcessor
     {
         protected abstract IEnumerable<string> ReadTradeData(Stream stream);
 
