@@ -9,6 +9,17 @@ namespace AbstractTrader
 {
     class TradeProcessorVersion2 : TradeProcessor
     {
+
+        protected void LogMessage(string message, params object[] args)
+        {
+            Console.WriteLine(message, args);
+            // added for Request 408
+            using (StreamWriter logfile = File.AppendText("log.xml"))
+            {
+                logfile.WriteLine("<log>" + message + "</log>", args);
+            }
+
+        }
         protected override IEnumerable<string> ReadTradeData(Stream stream)
         {
             var tradeData = new List<string>();
